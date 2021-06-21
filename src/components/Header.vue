@@ -2,7 +2,7 @@
     <div id="container">
         <div id="transparency">
             <div id="header_bar">
-                <img src="../assets/img/logo-light.png" alt="">
+                <img src="../assets/img/logo-light.png" alt="logo">
                 <nav>
                     <ul>
                         <li>
