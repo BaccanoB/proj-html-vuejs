@@ -120,7 +120,60 @@
     <!-- /learning section -->
 
     <!-- popular section -->
-    <section id="popular_section"></section>
+    <section id="popular_section">
+        <h2>Popular Online Courses</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, dolorum nisi architecto optio repellendus nemo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, facilis. </p>
+        <div id="slide_container">
+            <div>
+                <img src="../assets/img/course-5-f-img.jpg" alt="img">
+                <div class="slide_title">
+                    <h4>Android Developer</h4> 
+                    <span class="free">Free</span>
+                </div>
+                <h5>David Sanders</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat vitae, a obcaecati harum voluptatibus distinctio? Dolorum, dignissimos.</p>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <span>1</span>
+                    <i class="fas fa-tag"></i>
+                    <span>Programming</span>                    
+                </div>
+            </div>
+            <div>
+                <img src="../assets/img/course-6-f-img.jpg" alt="img">
+                <div class="slide_title">
+                    <h4>Web Designing</h4>
+                    <span class="free">Free</span>
+                </div>
+                <h5>Jennifer Powell</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat vitae, a obcaecati harum voluptatibus distinctio? Dolorum, dignissimos.</p>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <span>1</span>
+                    <i class="fas fa-tag"></i>
+                    <span>Programming</span>
+                </div>
+            </div>
+            <div>
+                <img src="../assets/img/course-12-f-img.jpg" alt="img">
+                <div class="slide_title">
+                    <h4>Financial Modeling</h4>
+                    <span id="money">&#36;20</span>
+                </div>
+                <h5>Edward Bowman</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat vitae, a obcaecati harum voluptatibus distinctio? Dolorum, dignissimos.</p>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <span>1</span>
+                    <i class="fas fa-tag"></i>
+                    <span>Business</span>
+                </div>
+            </div>
+        </div>
+        <div id="dot_slide">
+            <i v-for="(dot,index) in 3" :key="index" class="fas fa-circle"></i>
+        </div>
+    </section>
     <!--/ popular section -->
 
     <!-- pricing section -->
@@ -396,6 +449,116 @@ export default {
                     bottom: 10%;
                     width: 18%;
                 }
+            }
+        }
+    }
+    // popular
+    #popular_section {
+        width: 90%;
+        margin: 0 auto;
+        padding: 100px 0;
+        text-align: center;
+        background-color: #F7F9F8;
+
+        & > h2 {
+            font-size: 40px;
+            margin: 20px 0;
+            color: #303030;
+        }
+
+        & > p {
+            margin: 5px 50px 80px 50px;
+            line-height: 25px;
+            color: #989090;
+        }
+
+        #slide_container {
+            display: flex;
+            justify-content: center;
+
+            & > div {
+                text-align: left;
+                width: 25%;
+                padding-bottom: 10px;
+                margin: 10px 20px;
+                background-color: white;
+                border:1px solid #eeecec;
+
+                & > img {
+                    width: 100%;
+                }
+
+                .slide_title {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-top: 30px;
+
+                    & > h4 {
+                        font-size: 18px;
+                        color: #353535;
+                    }
+
+                    .free {
+                        text-transform: uppercase;
+                        background-color: #ffd740;
+                        color: white;
+                        padding: 5px 10px;
+                        border-radius: 40px;
+                    }
+
+                    #money {
+                        text-transform: uppercase;
+                        background-color: #40C4FF;
+                        color: white;
+                        padding: 5px 15px;
+                        border-radius: 40px;
+                    }
+
+                   
+                }
+
+                & > h5 {
+                    padding: 10px;
+                    color: #DBDBDB;
+                }
+
+                & > p {
+                    line-height: 25px;
+                    font-size: 13px;
+                    padding: 10px 40px 10px 10px;
+                    color: #989090;
+                }
+
+                & > div {
+                    padding: 10px;
+                    color: #B9B9B9;
+                    font-size: 12px;
+                    font-weight: bolder;
+
+                    & > i {
+                        margin: 0 10px;
+                    }
+
+                    & > span {
+                        text-transform: uppercase;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+
+                    .fa-tag {
+                        margin-right: 5px;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+
+        #dot_slide {
+            margin-top: 50px;
+            & > i {
+                margin: 5px;
+                font-size: 13px;
+                color: rgba(64, 196, 255, 0.5);
             }
         }
     }
