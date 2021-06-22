@@ -123,6 +123,7 @@ export default {
 
                 #globo {
                     width: 70%;
+                    cursor: pointer;
                 }
 
                 #phone_number {
@@ -151,7 +152,11 @@ export default {
                 }
 
                 i {
-                     color: #A1A1A1;
+                    color: #A1A1A1;
+                    cursor: pointer;
+                }
+                i:hover {
+                    color: #40C4FF;
                 }
 
                 ul {
@@ -164,17 +169,32 @@ export default {
                         a {
                             text-decoration: none;
                             font-size: 15px;
+                            cursor: pointer;
+                            transition: 0.2s;
                             color: #A1A1A1;
+                        }
+                        a:hover {
+                            color: #40C4FF;
                         }
 
                         h4 {
                             color: #CECECE;
+                            transition: 0,2s;
+                            cursor: pointer;
+                        }
+                        h4:hover {
+                            color: #40C4FF;
                         }
 
                         & > p {
                             margin: 8px 0;
                             font-size: 14px;
+                            cursor: pointer;
+                            transition: 0.2s;
                             color: #A1A1A1;
+                        }
+                        & > p:hover{
+                            color: #777575;
                         }
                     }
 
@@ -196,6 +216,7 @@ export default {
                 width: 50%;
                 font-size: 15px;
                 color: #828282; 
+                cursor: pointer;
             }
 
             #contact {
@@ -208,6 +229,11 @@ export default {
                 a {
                     color: #828282; 
                     margin: 0 0 0 20px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+                a:hover {
+                    color: #40C4FF;
                 }
 
                 & > p {

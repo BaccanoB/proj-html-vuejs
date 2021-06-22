@@ -253,10 +253,14 @@
 
     <!-- logo section -->
     <section id="logo_section">
-        <img v-for="(element,index) in images" :key="index" :src="hovered == false? element.img: element.imgHover"
-        @mouseover="changeImg"
-        @mouseleave="hovered=false"
-        alt="academy">
+        <img src="../assets/img/h5-client-5.png" alt="academy">
+        <img src="../assets/img/h5-client-1.png" alt="university">
+        <img src="../assets/img/h5-client-2.png" alt="educator">
+        <img src="../assets/img/h5-client-1.png" alt="university">
+        <!-- <img v-for="(element,index) in images" :key="index" :src="hovered == false? element.img:element.imgHover"
+        @mouseover="hovered=true"
+        @mouseleave="hovered=false" 
+        alt="academy">-->
     </section>
     <!-- /logo section -->
 
@@ -276,32 +280,27 @@
 <script>
 export default {
     name:'Main',
+    hovered:false,
     data(){
         return{
-            hovered:false,
             images:[
                 {
-                    img:"../assets/img/h5-client-5.png",
-                    imgHover:"../assets/img/h5-client-5-h.png"
+                    img:"./assets/img/h5-client-5.png",
+                    imgHover:"./assets/img/h5-client-5-h.png"
                 },
                 {
-                    img:"../assets/img/h5-client-1.png",
-                    imgHover:"../assets/img/h5-client-1-h.png"
+                    img:"./assets/img/h5-client-1.png",
+                    imgHover:"./assets/img/h5-client-1-h.png"
                 },
                 {
-                    img:"../assets/img/h5-client-2.png",
-                    imgHover:"../assets/img/h5-client-2-h.png"
+                    img:"./assets/img/h5-client-2.png",
+                    imgHover:"./assets/img/h5-client-2-h.png"
                 },
                 {
-                    img:"../assets/img/h5-client-1.png",
-                    imgHover:"../assets/img/h5-client-1-h.png"
+                    img:"./assets/img/h5-client-1.png",
+                    imgHover:"./assets/img/h5-client-1-h.png"
                 }
             ]
-        }
-    },
-    methods: {
-        changeImg:function(){
-            return this.hovered=true;
         }
     }
 }
