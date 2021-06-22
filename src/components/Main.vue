@@ -33,7 +33,10 @@
     <section id="trusted_name_section">
         <h2>The Trusted Name for In-Home Tutoring.</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit a autem eligendi ipsa architecto. Est rem aliquid incidunt fugit ducimus, minima architecto sequi eos iste earum. Neque dignissimos voluptate facilis?</p>
-        <a href="#">Learn More</a> <br>
+        <div>
+            <a href="#">Learn More</a> 
+            <i class="fas fa-chevron-right"></i>
+        </div>
         <img src="../assets/img/h5-img-1.jpg" alt="">
     </section>
     <!-- /trusted section -->
@@ -250,10 +253,10 @@
 
     <!-- logo section -->
     <section id="logo_section">
-        <img src="../assets/img/h5-client-5.png" alt="academy">
-        <img src="../assets/img/h5-client-1.png" alt="university">
-        <img src="../assets/img/h5-client-2.png" alt="educator">
-        <img src="../assets/img/h5-client-1.png" alt="university">
+        <img v-for="(element,index) in images" :key="index" :src="hovered == false? element.img: element.imgHover"
+        @mouseover="changeImg"
+        @mouseleave="hovered=false"
+        alt="academy">
     </section>
     <!-- /logo section -->
 
@@ -272,7 +275,35 @@
 
 <script>
 export default {
-    name:'Main'
+    name:'Main',
+    data(){
+        return{
+            hovered:false,
+            images:[
+                {
+                    img:"../assets/img/h5-client-5.png",
+                    imgHover:"../assets/img/h5-client-5-h.png"
+                },
+                {
+                    img:"../assets/img/h5-client-1.png",
+                    imgHover:"../assets/img/h5-client-1-h.png"
+                },
+                {
+                    img:"../assets/img/h5-client-2.png",
+                    imgHover:"../assets/img/h5-client-2-h.png"
+                },
+                {
+                    img:"../assets/img/h5-client-1.png",
+                    imgHover:"../assets/img/h5-client-1-h.png"
+                }
+            ]
+        }
+    },
+    methods: {
+        changeImg:function(){
+            return this.hovered=true;
+        }
+    }
 }
 </script>
 
@@ -297,6 +328,14 @@ export default {
                 margin: 20px 0 10px 0;
                 font-weight: bolder;
             }
+
+            & > img {
+                transition: 0.1s;
+                cursor: pointer;
+            }
+            & > img:hover {
+                transform: translateY(-5px);
+            }
         }
     }
     // trusted
@@ -314,12 +353,27 @@ export default {
             color: #979797;
         }
 
-        a {
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 15px;
-            font-weight: bolder;font-family: Arial, Helvetica, sans-serif;
-            color: #44C5FF;
+        & > div{
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 15px;
+                font-weight: bolder;font-family: Arial, Helvetica, sans-serif;
+                color: #44C5FF;
+                cursor: pointer;
+            }
+
+            .fa-chevron-right {
+                color: #44C5FF;
+                opacity: 0;
+                font-size: 12px;
+                margin-left: 3px;
+            }
+        }
+        & > div:hover .fa-chevron-right{
+            transition: 0.2s;
+            opacity: 3;
+            transform: translateX(6px);
         }
 
         & > img {
@@ -455,6 +509,8 @@ export default {
                 & > li {
                     padding: 30px;
                     border: 1px solid #eeecec;
+                    cursor: pointer;
+                    transition: 0.2s;
 
                     & > a {
                         text-decoration: none;
@@ -462,13 +518,11 @@ export default {
                         color: #989090;
                     }
                 }
-
-                .active {
+                & > li:hover {
                     border-left: 7px solid #40C4FF;
-                    & > a {
-                        color: #40C4FF;
-                    }
-                    
+                }
+                & > li:hover a {
+                    color: #40C4FF;
                 }
             }
             }
@@ -546,8 +600,10 @@ export default {
                 margin: 10px 20px;
                 background-color: white;
                 border:1px solid #eeecec;
+                transition: 0.2s;
 
                 & > img {
+                    cursor: pointer;
                     width: 100%;
                 }
 
@@ -560,6 +616,11 @@ export default {
                     & > h4 {
                         font-size: 18px;
                         color: #353535;
+                        transition: 0.1s;
+                        cursor: pointer;
+                    }
+                    & > h4:hover {
+                        color: #40C4FF;
                     }
 
                     .free {
@@ -614,7 +675,11 @@ export default {
                     }
                 }
             }
+             & > div:hover {
+                 transform: translateY(-6px);
+             }
         }
+        
 
         #dot_slide {
             margin-top: 50px;
@@ -622,6 +687,11 @@ export default {
                 margin: 5px;
                 font-size: 13px;
                 color: rgba(64, 196, 255, 0.5);
+                cursor: pointer;
+                transition: 0.1s;
+            }
+            & > i:hover {
+                color: #40C4FF;
             }
         }
     }
@@ -720,11 +790,18 @@ export default {
                     border: 2px solid #eeecec;
                     background-color: white;
                     padding: 20px 30px;
+                    transition: 0.2s;
+                    cursor: pointer;
+                }
+
+                & > button:hover {
+                    color: white;
+                    background-color: #40C4FF;
                 }
 
                 .button_active {
                     color: white;
-                    background-color: #40C4FF;
+                    background-color: rgba(64, 196, 255, 0.7);
                 }
             }
         }
@@ -737,6 +814,7 @@ export default {
         align-items: center;
         justify-content: center;
         padding: 90px;
+        cursor: pointer;
     }
 
     #top_square {

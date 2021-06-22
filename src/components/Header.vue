@@ -97,7 +97,13 @@ export default {
                                 color: white;
                                 text-decoration: none;
                                 text-transform: uppercase;
-                                font-size: 17px;
+                                font-size: 15px;
+                                transition: 0.1s;
+                                cursor: pointer;
+                            }
+
+                            a:hover {
+                                color: #dfdbdb;
                             }
                         }
                     }
@@ -113,6 +119,11 @@ export default {
                     i {
                         margin: 0 20px ;
                         font-size: 20px;
+                        transition: 0.1s;
+                        cursor:pointer;
+                    }
+                    i:hover {
+                        color: #dfdbdb;
                     }
 
                     .fa-clipboard {
