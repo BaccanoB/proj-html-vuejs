@@ -35,10 +35,6 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit a autem eligendi ipsa architecto. Est rem aliquid incidunt fugit ducimus, minima architecto sequi eos iste earum. Neque dignissimos voluptate facilis?</p>
         <a href="#">Learn More</a> <br>
         <img src="../assets/img/h5-img-1.jpg" alt="">
-        <div id="top_square">
-            <i class="fas fa-chevron-up"></i> 
-            <p>Top</p>
-        </div>
     </section>
     <!-- /trusted section -->
 
@@ -177,12 +173,100 @@
     <!--/ popular section -->
 
     <!-- pricing section -->
-    <section id="pricing_plans_section"></section>
+    <section id="pricing_plans_section">
+        <h2>Pricing Plans</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, libero fugit. Aliquam corrupti facere fugiat.</p>
+        <div id="tabel_container">
+            <div>
+                <h3 id="promo">Save up to 40% by paying weekly</h3>
+                <ul>
+                    <li>Number of Courses</li>
+                    <li>Time</li>
+                    <li>Web Designing</li>
+                    <li>Human-Centered Design</li>
+                    <li>Basic Marketing</li>
+                    <li>Phyton For Everybody</li>
+                    <li>Android Developer</li>
+                    <li>Business English</li>
+                </ul>
+            </div>
+            <div class="img_tabel_container">
+                <img src="../assets/img/h5-custom-icon-7.png" alt="light">
+                <h3>Standard</h3>
+                <p>&#36;12</p>
+                <ul>
+                    <li>2</li>
+                    <li>15 Days</li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-times"></i></li>
+                    <li><i class="fas fa-times"></i></li>
+                    <li><i class="fas fa-times"></i></li>
+                    <li><i class="fas fa-times"></i></li>
+                    <div class="button_container">
+                        <button>Get it now</button>
+                    </div>
+                </ul>
+            </div>
+            <div class="img_tabel_container active_col" >
+                <img src="../assets/img/h5-custom-icon-8.png" alt="brain">
+                <h3>Professional</h3>
+                <p>&#36;59</p>
+                <ul>
+                    <li>4</li>
+                    <li>30 Days</li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-times"></i></li>
+                    <li><i class="fas fa-times"></i></li>
+                    <div class="button_container">
+                        <button class="button_active">Get it now</button>
+                    </div>
+                </ul>
+            </div>
+            <div class="img_tabel_container">
+                <img src="../assets/img/h5-custom-icon-9.png" alt="cart">
+                <h3>Advanced</h3>
+                <p>&#36;88</p>
+                <ul>
+                    <li>6</li>
+                    <li>30 Days</li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <div class="button_container">
+                        <button>Get it now</button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </section>
     <!-- /pricing section -->
 
     <!-- logo section -->
-    <section id="logo_section"></section>
+    <section id="logo_section">
+        <img src="../assets/img/h5-client-5.png" alt="academy">
+        <img src="../assets/img/h5-client-1.png" alt="university">
+        <img src="../assets/img/h5-client-2.png" alt="educator">
+        <img src="../assets/img/h5-client-1.png" alt="university">
+    </section>
     <!-- /logo section -->
+
+    <div id="top_square">
+        <i class="fas fa-chevron-up"></i> 
+        <p>Top</p>
+    </div>
+    <div id="logo">
+        <img src="../assets/svg/svg-0.svg" alt="">
+    </div>
+    <div id="cart">
+        <img src="../assets/svg/svg-2.svg" alt="">
+    </div>
   </div>
 </template>
 
@@ -217,7 +301,6 @@ export default {
     }
     // trusted
     #trusted_name_section {
-        position: relative;
         width: 90%;
         margin: 0 auto;
         & > h2 {
@@ -242,27 +325,6 @@ export default {
         & > img {
             margin-top: 40px;
             width: 90%;
-        }
-
-        #top_square {
-            position: absolute;
-            left: 101%;
-            top: 65%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            width: 60px;
-            height: 60px;
-            font-weight: bolder;font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            text-transform: uppercase;
-            background-color: #40C4FF;
-            color: white;
-
-            & > p {
-                padding: 5px 0;
-            }
         }
     }
     // empowering
@@ -446,7 +508,7 @@ export default {
                 & > img {
                     position: absolute;
                     right: 5%;
-                    bottom: 10%;
+                    bottom: 15%;
                     width: 18%;
                 }
             }
@@ -454,11 +516,12 @@ export default {
     }
     // popular
     #popular_section {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         padding: 100px 0;
         text-align: center;
         background-color: #F7F9F8;
+        border-bottom: 2px solid #eeecec;
 
         & > h2 {
             font-size: 40px;
@@ -467,7 +530,7 @@ export default {
         }
 
         & > p {
-            margin: 5px 50px 80px 50px;
+            margin: 5px 100px 80px 100px;
             line-height: 25px;
             color: #989090;
         }
@@ -562,5 +625,175 @@ export default {
             }
         }
     }
+    // pricing
+    #pricing_plans_section {
+        width: 100%;
+        text-align: center;
+        padding:50px 50px 150px 50px;
+        border-bottom: 2px solid #eeecec;
+
+        & > h2 {
+            font-size: 40px;
+            margin: 20px 0;
+            color: #303030;
+        }
+
+        & > p {
+            margin: 5px 50px 80px 50px;
+            line-height: 25px;
+            color: #989090;
+        }
+
+        #tabel_container {
+            display: flex;
+            width: 90%;
+            margin: 0 auto;
+
+            .img_tabel_container {
+                text-align: center;
+                background-color: #F7FDFF;
+
+                & > ul {
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+
+            .active_col {
+                border-top: 5px solid #40C4FF;
+            }
+
+            & > div {
+                width: calc(100% / 4);
+                height: 100%;
+                padding-top: 30px;
+                text-align: left;
+                border: 1px solid #eeecec;
+                border-top: 5px solid rgba(64, 196, 255, 0.2);
+
+                #promo {
+                    padding: 95px 20px 75px 30px;
+                    font-size: 25px;
+                }
+
+                & > h3 {
+                    padding: 10px 0 20px 0;
+                    font-size: 24px;
+                    color: #303030;
+                }
+
+                & > p {
+                    padding: 5px 0 20px 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 20px;
+                    font-weight: bolder;
+                }
+
+                & > ul {
+                    list-style: none;
+
+                    & > li {
+                        padding: 30px;
+                        font-weight: bolder;
+                        font-size: 20px;
+                        color: #989090;
+                        border-top: 1px solid #eeecec;
+                        border-bottom: 1px solid #eeecec;
+                        background-color: white;
+
+                        .fa-check {
+                            color: #40C4FF;
+                        }
+                    }
+                }
+
+            }
+
+            .button_container {
+                width: 100%;
+                padding: 20px;
+                background-color: #F7FDFF;
+
+                & > button {
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                    color: #989090;
+                    border: 2px solid #eeecec;
+                    background-color: white;
+                    padding: 20px 30px;
+                }
+
+                .button_active {
+                    color: white;
+                    background-color: #40C4FF;
+                }
+            }
+        }
+    }
+    // logo
+    #logo_section {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 90px;
+    }
+
+    #top_square {
+        position: fixed;
+        top:50%;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 60px;
+        height: 60px;
+        font-weight: bolder;font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        text-transform: uppercase;
+        background-color: #40C4FF;
+        color: white;
+
+        & > p {
+            padding: 5px 0;
+        }
+    }
+
+
+    #logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top:33%;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background-color: #EF2853;
+
+        & > img {
+            width: 65%;
+        }
+    }
+
+    #cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #eeecec;
+        padding: 5px;
+        position: fixed;
+        top:40%;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+
+        & > img {
+            width: 60%;
+        }
+    }
+
 
 </style>
