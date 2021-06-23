@@ -5,13 +5,13 @@
             <img id="logo" src="../assets/img/footer-logo-1.png" alt="logo">
             <p>Providing Life Changing Experiences Through Education. Class That Fit Your Busy Life. Closer To Home</p>
             <div id="phone_number">
-                <i class="fas fa-phone-alt">
+                <i class="fas fa-phone-alt cursor">
                     <i class="fas fa-arrow-right"></i>
                 </i>
                 <span>1-677-124-44227</span>
             </div> <br>
             <div id="schedule">
-                <i class="far fa-clock"></i>
+                <i class="far fa-clock cursor"></i>
                 <span>Mon-Sat 8.00-18.00</span>
             </div>
         </div>
@@ -19,8 +19,8 @@
             <h3>Popular Courses</h3>
             <ul>
                 <li v-for="(element,index) in professors" :key="index">
-                    <h4>{{ element.name }}</h4> 
-                    <p>{{ element.subject }}</p>
+                    <h4 class="cursor">{{ element.name }}</h4> 
+                    <p class="cursor">{{ element.subject }}</p>
                 </li>
             </ul>
         </div>
@@ -28,30 +28,30 @@
             <h3>Support</h3>
             <ul>
                 <li v-for="(element,index) in support" :key="index">
-                    <a href="#">{{ element }}</a>
+                    <a class="cursor" href="#">{{ element }}</a>
                 </li>
             </ul>
         </div>
         <div>
             <h3>Flexible Learning</h3>
-            <img id="globo" src="../assets/img/footer-img-1.png" alt="">
+            <img class="cursor" id="globo" src="../assets/img/footer-img-1.png" alt="">
         </div>
       </section>
       <section id="phone_contact_section">
           <div id="copyright">
-              <p>Copyrights 2017 <i class="far fa-copyright"></i>Mikado Themes</p>
+              <p class="cursor">Copyrights 2017 <i class="far fa-copyright"></i>Mikado Themes</p>
           </div>
           <div id="contact">
               <p>CALL +44 300 303 0266</p>
               <p id="foolow_us">Follow Us</p>
               <a href="">
-                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-twitter cursor"></i>
               </a>
               <a href="">
-                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-instagram cursor"></i>
               </a>
               <a href="">
-                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-facebook-f cursor"></i>
               </a>
           </div>
       </section>
@@ -69,6 +69,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../style/variable';
+@import '../style/mixins';
 
     div {
         width: 100%;
@@ -77,8 +79,7 @@ export default {
         #link_section {
             display: flex;
             justify-content: space-around;
-            width: 90%;
-            margin: 0 auto;
+            @include container;
             padding: 120px 0 100px 0;
 
             & > div {
@@ -102,12 +103,11 @@ export default {
                     padding-right: 40px;
                     font-size: 14px;
                     line-height: 25px;
-                    color: #A1A1A1;
+                    color: $footer_text;
                 }
 
                 #globo {
                     width: 70%;
-                    cursor: pointer;
                 }
 
                 #phone_number {
@@ -136,11 +136,10 @@ export default {
                 }
 
                 i {
-                    color: #A1A1A1;
-                    cursor: pointer;
+                    color: $footer_text;
                 }
                 i:hover {
-                    color: #40C4FF;
+                    color: $light_blu;
                 }
 
                 ul {
@@ -153,29 +152,26 @@ export default {
                         a {
                             text-decoration: none;
                             font-size: 15px;
-                            cursor: pointer;
                             transition: 0.2s;
-                            color: #A1A1A1;
+                            color: $footer_text;
                         }
                         a:hover {
-                            color: #40C4FF;
+                            color: $light_blu;
                         }
 
                         h4 {
                             color: #CECECE;
                             transition: 0,2s;
-                            cursor: pointer;
                         }
                         h4:hover {
-                            color: #40C4FF;
+                            color: $light_blu;
                         }
 
                         & > p {
                             margin: 8px 0;
                             font-size: 14px;
-                            cursor: pointer;
                             transition: 0.2s;
-                            color: #A1A1A1;
+                            color: $footer_text;
                         }
                         & > p:hover{
                             color: #777575;
@@ -187,11 +183,9 @@ export default {
         }
 
         #phone_contact_section {
-            display: flex;
-            align-items: center;
+            @include container;
+            @include flex;
             justify-content: space-between;
-            width: 90%;
-            margin: 0 auto;
             height: 100px;
             font-family: Arial, Helvetica, sans-serif;
             border-top: 2px solid #AAAAAA;
@@ -199,25 +193,24 @@ export default {
             #copyright {
                 width: 50%;
                 font-size: 15px;
-                color: #828282; 
+                color: $footer_grey; 
                 cursor: pointer;
             }
 
             #contact {
-                display: flex;
-                align-items: center;
+                @include flex;
                 justify-content: flex-end;
                 width: 50%;
-                color: #828282; 
+                color: $footer_grey; 
 
                 a {
-                    color: #828282; 
+                    color: $footer_grey; 
                     margin: 0 0 0 20px;
                     cursor: pointer;
                     transition: 0.3s;
                 }
                 a:hover {
-                    color: #40C4FF;
+                    color: $light_blu;
                 }
 
                 & > p {

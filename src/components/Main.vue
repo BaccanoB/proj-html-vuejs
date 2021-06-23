@@ -2,8 +2,8 @@
   <div >
     <!-- icon section -->
     <section id="icon_section">
-        <div v-for="(element,index) in icons" :key="index">
-            <img :src="element.img" alt="language_img">
+        <div class="tx_align" v-for="(element,index) in icons" :key="index">
+            <img class="cursor" :src="element.img" alt="language_img">
             <p>{{ element.description }}</p>
         </div>
     </section>
@@ -14,7 +14,7 @@
         <h2>The Trusted Name for In-Home Tutoring.</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit a autem eligendi ipsa architecto. Est rem aliquid incidunt fugit ducimus, minima architecto sequi eos iste earum. Neque dignissimos voluptate facilis?</p>
         <div>
-            <a href="#">Learn More</a> 
+            <a class="cursor uppercase" href="#">Learn More</a> 
             <i class="fas fa-chevron-right"></i>
         </div>
         <img src="../assets/img/h5-img-1.jpg" alt="">
@@ -45,13 +45,18 @@
 
     <!-- blu section -->
     <section id="blu_section">
-        <div id="student_profile">
-            <img src="../assets/img/testimonials-standard-2.png" alt="">
+        <div class="tx_align" id="student_profile">
+            <img src="../assets/img/testimonials-standard-2.png" alt="student">
             <p>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim temporibus non, reiciendis architecto ipsum praesentium possimus quibusdam ullam? Velit nam exercitationem quas ipsam atque et voluptate amet dignissimos tenetur odio laudantium beatae vitae sequi, veritatis quibusdam repellendus ipsum natus officia."</p>
             <h4>Joan Collins</h4>
-            <span>student</span>
+            <span class="uppercase">Student</span>
             <div id="dot_container">
-                <i v-for="(dot,index) in 3" :key="index" class="fas fa-circle"></i>
+                 <i
+                    v-for="(image,index) in students" :key="index" 
+                    :class="(index == indexImage) ? 'far' : 'fas'"
+                    class="fa-circle cursor"
+                    @click="goToImage(index)" 
+                ></i>
             </div>
 
         </div>
@@ -63,23 +68,8 @@
         <div id="learning_container">
             <div id="list">
             <ul>
-                <li class="active">
-                    <a href="#">What We Do</a>
-                </li>
-                <li>
-                    <a href="#">Degree Program</a>
-                </li>
-                <li>
-                    <a href="#">Carrer Achivements</a>
-                </li>
-                <li>
-                    <a href="#">Personal Managment</a>
-                </li>
-                <li>
-                    <a href="#">Steps To Success</a>
-                </li>
-                <li>
-                    <a href="#">Knowledge Tranfer</a>
+                <li class="cursor" v-for="(item,index) in list" :key="index">
+                    <a href="#">{{item}}</a>
                 </li>
             </ul>
             </div>
@@ -99,53 +89,23 @@
     <!-- /learning section -->
 
     <!-- popular section -->
-    <section id="popular_section">
+    <section id="popular_section" class="tx_align">
         <h2>Popular Online Courses</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, dolorum nisi architecto optio repellendus nemo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, facilis. </p>
         <div id="slide_container">
-            <div>
-                <img src="../assets/img/course-5-f-img.jpg" alt="img">
+            <div v-for="(element,index) in profiles" :key="index">
+                <img class="cursor" :src="element.img" alt="img">
                 <div class="slide_title">
-                    <h4>Android Developer</h4> 
-                    <span class="free">Free</span>
+                    <h4 class="cursor"> {{ element.subject }}</h4> 
+                    <span class="free uppercase">{{ element.cost }}</span>
                 </div>
-                <h5>David Sanders</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat vitae, a obcaecati harum voluptatibus distinctio? Dolorum, dignissimos.</p>
+                <h5>{{ element.name }}</h5>
+                <p>{{element.text}}</p>
                 <div>
                     <i class="fas fa-user"></i>
                     <span>1</span>
                     <i class="fas fa-tag"></i>
-                    <span>Programming</span>                    
-                </div>
-            </div>
-            <div>
-                <img src="../assets/img/course-6-f-img.jpg" alt="img">
-                <div class="slide_title">
-                    <h4>Web Designing</h4>
-                    <span class="free">Free</span>
-                </div>
-                <h5>Jennifer Powell</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat vitae, a obcaecati harum voluptatibus distinctio? Dolorum, dignissimos.</p>
-                <div>
-                    <i class="fas fa-user"></i>
-                    <span>1</span>
-                    <i class="fas fa-tag"></i>
-                    <span>Programming</span>
-                </div>
-            </div>
-            <div>
-                <img src="../assets/img/course-12-f-img.jpg" alt="img">
-                <div class="slide_title">
-                    <h4>Financial Modeling</h4>
-                    <span id="money">&#36;20</span>
-                </div>
-                <h5>Edward Bowman</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat vitae, a obcaecati harum voluptatibus distinctio? Dolorum, dignissimos.</p>
-                <div>
-                    <i class="fas fa-user"></i>
-                    <span>1</span>
-                    <i class="fas fa-tag"></i>
-                    <span>Business</span>
+                    <span class="uppercase">{{ element.type }}</span>                    
                 </div>
             </div>
         </div>
@@ -156,7 +116,7 @@
     <!--/ popular section -->
 
     <!-- pricing section -->
-    <section id="pricing_plans_section">
+    <section id="pricing_plans_section" class="tx_align">
         <h2>Pricing Plans</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, libero fugit. Aliquam corrupti facere fugiat.</p>
         <div id="tabel_container">
@@ -173,7 +133,7 @@
                     <li>Business English</li>
                 </ul>
             </div>
-            <div class="img_tabel_container">
+            <div class="img_tabel_container tx_align">
                 <img src="../assets/img/h5-custom-icon-7.png" alt="light">
                 <h3>Standard</h3>
                 <p>&#36;12</p>
@@ -191,7 +151,7 @@
                     </div>
                 </ul>
             </div>
-            <div class="img_tabel_container active_col" >
+            <div class="img_tabel_container active_col tx_align" >
                 <img src="../assets/img/h5-custom-icon-8.png" alt="brain">
                 <h3>Professional</h3>
                 <p>&#36;59</p>
@@ -209,7 +169,7 @@
                     </div>
                 </ul>
             </div>
-            <div class="img_tabel_container">
+            <div class="img_tabel_container tx_align">
                 <img src="../assets/img/h5-custom-icon-9.png" alt="cart">
                 <h3>Advanced</h3>
                 <p>&#36;88</p>
@@ -233,7 +193,7 @@
 
     <!-- logo section -->
     <section id="logo_section">
-         <div v-for="(element,index) in images" :key="index" >
+        <div v-for="(element,index) in images" :key="index" >
             <img :src="hovered==false?element.img:element.imgHover" 
             @mouseover="hovered = true"
             @mouseleave="hovered=false"
@@ -244,7 +204,7 @@
 
     <div id="top_square">
         <i class="fas fa-chevron-up"></i> 
-        <p>Top</p>
+        <p class="uppercase">Top</p>
     </div>
     <div id="logo">
         <img src="../assets/svg/svg-0.svg" alt="">
@@ -260,31 +220,32 @@ export default {
     name:'Main',
     props:{
         icons:Array,
-        images:Array
+        images:Array,
+        profiles:Array,
+        list:Array
     },
     data(){
         return {
-            hovered:false
+            hovered:false,
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '../style/variable';
+@import '../style/mixins';
     // icon
     #icon_section {
-        display: flex;
-        flex-wrap: wrap;
+        @include flex;
+        @include container;
         justify-content: center;
-        align-items: center;
-        width: 90%;
-        margin: 0 auto;
+        flex-wrap: wrap;
         height: 400px;
 
         & > div {
             width: calc(100% / 7 );
             background-color:#F2F8FC;
-            text-align: center;
             margin: 0 10px;
             padding: 40px 0;
 
@@ -295,7 +256,6 @@ export default {
 
             & > img {
                 transition: 0.1s;
-                cursor: pointer;
             }
             & > img:hover {
                 transform: translateY(-5px);
@@ -304,8 +264,7 @@ export default {
     }
     // trusted
     #trusted_name_section {
-        width: 90%;
-        margin: 0 auto;
+        @include container;
         & > h2 {
             font-size: 40px;
             margin:  30px 925px 30px 0;
@@ -320,15 +279,13 @@ export default {
         & > div{
             a {
                 text-decoration: none;
-                text-transform: uppercase;
                 font-size: 15px;
                 font-weight: bolder;font-family: Arial, Helvetica, sans-serif;
-                color: #44C5FF;
-                cursor: pointer;
+                color: $light_blu;
             }
 
             .fa-chevron-right {
-                color: #44C5FF;
+                color: $light_blu;
                 opacity: 0;
                 font-size: 12px;
                 margin-left: 3px;
@@ -348,8 +305,7 @@ export default {
     // empowering
     #empowering_section {
         display: flex;
-        width: 90%;
-        margin: 0 auto;
+        @include container;
         padding: 50px 0 50px 0;
 
         div {
@@ -377,8 +333,7 @@ export default {
             padding: 20px 100px 20px 20px;
 
             #number_container {
-                display: flex;
-                align-items: center;
+                @include flex;
                 flex-direction: row;
                 width: 100%;
                 margin-top: 60px;
@@ -386,12 +341,12 @@ export default {
                 & > div {
                     .numbers {
                         font-size: 50px;
-                        color: #44C5FF;
+                        color: $light_blu;
                         margin: 25px 0;
                     }
 
                     & > p {
-                        color: #44C5FF;
+                        color: $light_blu;
                         margin: 0;
                         font-size: 20px;
                         font-weight: bolder;
@@ -409,15 +364,12 @@ export default {
         background-size: cover;
 
         #student_profile {
-            display: flex;
-            align-items: center;
+            @include flex;
+            @include container;
             flex-direction: column;
-            width: 90%;
             height: 100%;
-            margin: 0 auto;
             padding: 100px;
             color: white;
-            text-align: center;
 
             & > img {
                 width: 10%;
@@ -435,7 +387,6 @@ export default {
             }
 
             & > span {
-                text-transform: uppercase;
                 font-size: 14px;
                 font-weight: bolder;
             }
@@ -454,12 +405,11 @@ export default {
     #learning_section {
         width: 100%;
         padding: 150px  0;
-        border-bottom: 2px solid #eeecec;
+        border-bottom: 2px solid $light_grey;
 
         #learning_container {
             display: flex;
-            width: 90%;
-            margin: 0 auto;
+            @include container;
             height: 100%;
 
             #list {
@@ -472,8 +422,7 @@ export default {
                 
                 & > li {
                     padding: 30px;
-                    border: 1px solid #eeecec;
-                    cursor: pointer;
+                    border: 1px solid $light_grey;
                     transition: 0.2s;
 
                     & > a {
@@ -483,10 +432,10 @@ export default {
                     }
                 }
                 & > li:hover {
-                    border-left: 7px solid #40C4FF;
+                    border-left: 7px solid $light_blu;
                 }
                 & > li:hover a {
-                    color: #40C4FF;
+                    color: $light_blu;
                 }
             }
             }
@@ -518,7 +467,7 @@ export default {
 
                         & > i {
                             margin-right: 10px;
-                            color: #40C4FF;
+                            color: $light_blu;
                         }
                     }
                 }
@@ -535,11 +484,9 @@ export default {
     // popular
     #popular_section {
         width: 100%;
-        margin: 0 auto;
         padding: 100px 0;
-        text-align: center;
         background-color: #F7F9F8;
-        border-bottom: 2px solid #eeecec;
+        border-bottom: 2px solid $light_grey;
 
         & > h2 {
             font-size: 40px;
@@ -563,32 +510,28 @@ export default {
                 padding-bottom: 10px;
                 margin: 10px 20px;
                 background-color: white;
-                border:1px solid #eeecec;
+                border:1px solid $light_grey;
                 transition: 0.2s;
 
                 & > img {
-                    cursor: pointer;
                     width: 100%;
                 }
 
                 .slide_title {
-                    display: flex;
+                    @include flex;
                     justify-content: space-between;
-                    align-items: center;
                     padding-top: 30px;
 
                     & > h4 {
                         font-size: 18px;
                         color: #353535;
                         transition: 0.1s;
-                        cursor: pointer;
                     }
                     & > h4:hover {
-                        color: #40C4FF;
+                        color: $light_blu;
                     }
 
                     .free {
-                        text-transform: uppercase;
                         background-color: #ffd740;
                         color: white;
                         padding: 5px 10px;
@@ -596,8 +539,7 @@ export default {
                     }
 
                     #money {
-                        text-transform: uppercase;
-                        background-color: #40C4FF;
+                        background-color: $light_blu;
                         color: white;
                         padding: 5px 15px;
                         border-radius: 40px;
@@ -629,7 +571,6 @@ export default {
                     }
 
                     & > span {
-                        text-transform: uppercase;
                         font-family: Arial, Helvetica, sans-serif;
                     }
 
@@ -655,16 +596,15 @@ export default {
                 transition: 0.1s;
             }
             & > i:hover {
-                color: #40C4FF;
+                color: $light_blu;
             }
         }
     }
     // pricing
     #pricing_plans_section {
         width: 100%;
-        text-align: center;
         padding:50px 50px 150px 50px;
-        border-bottom: 2px solid #eeecec;
+        border-bottom: 2px solid $light_grey;
 
         & > h2 {
             font-size: 40px;
@@ -680,11 +620,9 @@ export default {
 
         #tabel_container {
             display: flex;
-            width: 90%;
-            margin: 0 auto;
+            @include container;
 
             .img_tabel_container {
-                text-align: center;
                 background-color: #F7FDFF;
 
                 & > ul {
@@ -693,7 +631,7 @@ export default {
             }
 
             .active_col {
-                border-top: 5px solid #40C4FF;
+                border-top: 5px solid $light_blu;
             }
 
             & > div {
@@ -701,7 +639,7 @@ export default {
                 height: 100%;
                 padding-top: 30px;
                 text-align: left;
-                border: 1px solid #eeecec;
+                border: 1px solid $light_grey;
                 border-top: 5px solid rgba(64, 196, 255, 0.2);
 
                 #promo {
@@ -730,12 +668,12 @@ export default {
                         font-weight: bolder;
                         font-size: 20px;
                         color: #989090;
-                        border-top: 1px solid #eeecec;
-                        border-bottom: 1px solid #eeecec;
+                        border-top: 1px solid $light_grey;
+                        border-bottom: 1px solid $light_grey;
                         background-color: white;
 
                         .fa-check {
-                            color: #40C4FF;
+                            color: $light_blu;
                         }
                     }
                 }
@@ -751,7 +689,7 @@ export default {
                     text-transform: uppercase;
                     font-weight: bolder;
                     color: #989090;
-                    border: 2px solid #eeecec;
+                    border: 2px solid $light_grey;
                     background-color: white;
                     padding: 20px 30px;
                     transition: 0.2s;
@@ -760,7 +698,7 @@ export default {
 
                 & > button:hover {
                     color: white;
-                    background-color: #40C4FF;
+                    background-color: $light_blu;
                 }
 
                 .button_active {
@@ -772,10 +710,8 @@ export default {
     }
     // logo
     #logo_section {
-        width: 90%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
+        @include container;
+        @include flex;
         justify-content: center;
         padding: 90px;
         cursor: pointer;
@@ -785,16 +721,14 @@ export default {
         position: fixed;
         top:50%;
         right: 0;
-        display: flex;
-        align-items: center;
+        @include flex;
         justify-content: center;
         flex-direction: column;
         width: 60px;
         height: 60px;
         font-weight: bolder;font-family: Arial, Helvetica, sans-serif;
         font-size: 13px;
-        text-transform: uppercase;
-        background-color: #40C4FF;
+        background-color: $light_blu;
         color: white;
 
         & > p {
@@ -804,8 +738,7 @@ export default {
 
 
     #logo {
-        display: flex;
-        align-items: center;
+        @include flex;
         justify-content: center;
         position: fixed;
         top:33%;
@@ -820,10 +753,9 @@ export default {
     }
 
     #cart {
-        display: flex;
-        align-items: center;
+        @include flex;
         justify-content: center;
-        border: 1px solid #eeecec;
+        border: 1px solid $light_grey;
         padding: 5px;
         position: fixed;
         top:40%;
