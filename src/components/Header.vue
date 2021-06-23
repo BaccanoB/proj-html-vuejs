@@ -207,6 +207,9 @@ export default {
                     border: 1px solid $light_blu;
                     color: white;
                 }
+                button:hover {
+                   background-color: rgba(64, 196, 255, 0.7); 
+                }
 
                 #circle {
                     @include flex;

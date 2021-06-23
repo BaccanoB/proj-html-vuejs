@@ -202,8 +202,8 @@
     </section>
     <!-- /logo section -->
 
-    <div id="top_square">
-        <i class="fas fa-chevron-up"></i> 
+    <div id="top_square" class="cursor">
+        <i class="fas fa-chevron-up "></i> 
         <p class="uppercase">Top</p>
     </div>
     <div id="logo">
@@ -733,6 +733,9 @@ export default {
 
         & > p {
             padding: 5px 0;
+        }
+        & > p:hover {
+            display: none;
         }
     }
 
