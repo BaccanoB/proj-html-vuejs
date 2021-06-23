@@ -27,20 +27,8 @@
         <div>
             <h3>Support</h3>
             <ul>
-                <li>
-                    <a href="#">User dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Contact Us</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-                <li>
-                    <a href="#">Course Offer</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
+                <li v-for="(element,index) in support" :key="index">
+                    <a href="#">{{ element }}</a>
                 </li>
             </ul>
         </div>
@@ -74,7 +62,8 @@
 export default {
     name:'Footer',
     props:{
-        professors:Array
+        professors:Array,
+        support:Array
     }
 }
 </script>

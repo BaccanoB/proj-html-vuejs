@@ -2,7 +2,8 @@
   <div id="app">
     <Header />
     <Main />
-    <Footer :professors="professors"/>
+    <Footer :professors="professors"
+    :support="support"/>
   </div>
 </template>
 
@@ -19,23 +20,25 @@ export default {
     Footer
   },
   data(){
-        return{
-            professors:[
-                {
-                    "name":"Preston Marshall",
-                    "subject":"Business English"
-                },
-                {
-                    "name":"David Sanders",
-                    "subject":"Social Computing"
-                },
-                {
-                    "name":"Jennie King",
-                    "subject":"Learn Spanish"
-                }
-            ]
+    return{
+      professors:[
+        {
+          "name":"Preston Marshall",
+          "subject":"Business English"
+        },
+        {
+          "name":"David Sanders",
+          "subject":"Social Computing"
+        },
+        {
+          "name":"Jennie King",
+          "subject":"Learn Spanish"
         }
+      ],
+      support:['User dashboard','Contact Us','FAQ','Course Offer','Events']
+        
     }
+  }
       // images:[
       //   {
       //     "img":"../assets/img/h5-client-5.png",
