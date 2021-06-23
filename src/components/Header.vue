@@ -1,5 +1,6 @@
 <template>
     <div id="container">
+            <img src="../assets/img/h5-slide-3-background.jpg" alt="">
         <div id="transparency">
             <div id="header_bar">
                 <img src="../assets/img/logo-light.png" alt="logo">
@@ -35,24 +36,27 @@
 export default {
     name:'Header',
     props: {
-        nav:Array
+        nav:Array   
     }
 }
 </script>
 
 <style lang="scss" scoped>
     #container {
+        position: relative;
         width: 100%;
         height: 700px;
-        background-image: url('../assets/img/course-9-f-img.jpg');
-        background-size: cover;
-        background-position: center;  
         color: white;
+        
+        & > img {
+            width: 100%;
+        }
 
         #transparency {
-
+            position: absolute;
+            top: 0;
             width: 100%;
-            height: 100%;
+            height: 98%;
             background-color: rgba(0, 0, 0, 0.3);
 
             #header_bar {
@@ -174,7 +178,6 @@ export default {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-top: 90px;
 
                     & > i {
                         margin: 0 8px;
@@ -189,6 +192,5 @@ export default {
             }
         }
     }
-
 
 </style>

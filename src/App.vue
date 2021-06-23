@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <Header :nav="nav" />
-    <Main />
+    <Header :nav="nav"
+    /> 
+    <Main :icons="icons"
+    :images="images"/>
     <Footer :professors="professors"
     :support="support"/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Main from './components/Main.vue'
-import Footer from './components/Footer.vue'
+import Header from './components/Header.vue';
+import Main from './components/Main.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
@@ -36,31 +38,57 @@ export default {
         }
       ],
       support:['User dashboard','Contact Us','FAQ','Course Offer','Events'],
-      nav:['Home','Courses','Instructors','Events','Pages','Elements']
-        
+      nav:['Home','Courses','Instructors','Events','Pages','Elements'],  
+      icons:[
+        {
+            'description': "Languages",
+            'img':"https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-1.png"
+        },
+        {
+            'description': "Software",
+            'img':"https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-2.png"
+        },
+        {
+            'description': "Business",
+            'img':"https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-3.png"
+        },
+        {
+            'description': "Chemistry",
+            'img':"https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-4.png"
+        },
+        {
+            'description': "Science",
+            'img':"https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-5.png"
+        },
+        {
+            'description': "DIY&amp;Craft",
+            'img':"https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-6.png"
+        }
+      ],
+      images:[
+        {
+          'img':require('./assets/img/h5-client-5.png'),
+          'imgHover':require('./assets/img/h5-client-5-h.png')
+        },
+        {
+          'img':require('./assets/img/h5-client-1.png'),
+          'imgHover':require('./assets/img/h5-client-1-h.png')
+        },
+        {
+          'img':require('./assets/img/h5-client-2.png'),
+          'imgHover':require('./assets/img/h5-client-2-h.png')
+        },
+        {
+          'img':require('./assets/img/h5-client-1.png'),
+          'imgHover':require('./assets/img/h5-client-1-h.png')
+        }
+      ],
     }
-  }
-      // images:[
-      //   {
-      //     "img":"../assets/img/h5-client-5.png",
-      //     'imgHover':"../assets/img/h5-client-5-h.png"
-      //   },
-      //   {
-      //     'img':"../assets/img/h5-client-1.png",
-      //     'imgHover':"../assets/img/h5-client-1-h.png"
-      //   },
-      //   {
-      //     'img':"../assets/img/h5-client-2.png",
-      //     'imgHover':"../assets/img/h5-client-2-h.png"
-      //   },
-      //   {
-      //     'img':"../assets/img/h5-client-1.png",
-      //     'imgHover':"../assets/img/h5-client-1-h.png"
-      //   }
-      // ]  
+  }  
 }
 </script>
 
 <style lang="scss">
-@import './style/general';
+
+ @import './style/general';
 </style>

@@ -2,29 +2,9 @@
   <div >
     <!-- icon section -->
     <section id="icon_section">
-        <div>
-            <img src="https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-1.png" alt="language_img">
-            <p>Languages</p>
-        </div>
-        <div>
-            <img src="https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-2.png" alt="softwere_img">
-            <p>Software</p>
-        </div>
-        <div>
-            <img src="https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-3.png" alt=""> 
-            <p>Business</p>
-        </div>
-        <div>
-            <img src="https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-4.png" alt="chemistry_img">
-            <p>Chemistry</p>
-        </div>
-        <div>
-            <img src="https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-5.png" alt="science_img">
-            <p>Science</p>
-        </div>
-        <div>
-            <img src="https://iacademy.qodeinteractive.com/wp-content/uploads/2017/05/h5-custom-icon-6.png" alt="craft_img">
-            <p>DIY&amp;Craft</p>
+        <div v-for="(element,index) in icons" :key="index">
+            <img :src="element.img" alt="language_img">
+            <p>{{ element.description }}</p>
         </div>
     </section>
     <!-- /icon section -->
@@ -253,14 +233,12 @@
 
     <!-- logo section -->
     <section id="logo_section">
-        <img src="../assets/img/h5-client-5.png" alt="academy">
-        <img src="../assets/img/h5-client-1.png" alt="university">
-        <img src="../assets/img/h5-client-2.png" alt="educator">
-        <img src="../assets/img/h5-client-1.png" alt="university">
-        <!-- <div v-for="(element,index) in images" :key="index" >
-            <img :src="element.img"
+         <div v-for="(element,index) in images" :key="index" >
+            <img :src="hovered==false?element.img:element.imgHover" 
+            @mouseover="hovered = true"
+            @mouseleave="hovered=false"
             alt="academy">
-        </div> -->
+        </div> 
     </section>
     <!-- /logo section -->
 
@@ -281,7 +259,13 @@
 export default {
     name:'Main',
     props:{
-        images: Array
+        icons:Array,
+        images:Array
+    },
+    data(){
+        return {
+            hovered:false
+        }
     }
 }
 </script>
@@ -298,9 +282,10 @@ export default {
         height: 400px;
 
         & > div {
-            width: calc(100% / 6 - 20px);
+            width: calc(100% / 7 );
             background-color:#F2F8FC;
             text-align: center;
+            margin: 0 10px;
             padding: 40px 0;
 
             & > p {
