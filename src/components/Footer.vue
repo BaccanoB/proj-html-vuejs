@@ -34,7 +34,7 @@
         </div>
         <div>
             <h3>Flexible Learning</h3>
-            <img class="cursor" id="globo" src="../assets/img/footer-img-1.png" alt="">
+            <img class="cursor" id="globo" src="../assets/img/footer-img-1.png" alt="globo">
         </div>
       </section>
       <section id="phone_contact_section">

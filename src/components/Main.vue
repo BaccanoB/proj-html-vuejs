@@ -17,14 +17,14 @@
             <a class="cursor uppercase" href="#">Learn More</a> 
             <i class="fas fa-chevron-right"></i>
         </div>
-        <img src="../assets/img/h5-img-1.jpg" alt="">
+        <img src="../assets/img/h5-img-1.jpg" alt="people">
     </section>
     <!-- /trusted section -->
 
     <!-- empowering section -->
     <section id="empowering_section">
         <div>
-            <img src="../assets/img/h1-img-8.jpg" alt="">
+            <img src="../assets/img/h1-img-8.jpg" alt="world">
         </div>
         <div id="empowering_text">
             <h2>Empowering Children To Reach Their Potential</h2>
@@ -197,7 +197,7 @@
             <img :src="hovered==false?element.img:element.imgHover" 
             @mouseover="hovered = true"
             @mouseleave="hovered=false"
-            alt="academy">
+            alt="logo">
         </div> 
     </section>
     <!-- /logo section -->
