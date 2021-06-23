@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :nav="nav" />
     <Main />
     <Footer :professors="professors"
     :support="support"/>
@@ -35,7 +35,8 @@ export default {
           "subject":"Learn Spanish"
         }
       ],
-      support:['User dashboard','Contact Us','FAQ','Course Offer','Events']
+      support:['User dashboard','Contact Us','FAQ','Course Offer','Events'],
+      nav:['Home','Courses','Instructors','Events','Pages','Elements']
         
     }
   }

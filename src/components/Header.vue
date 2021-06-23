@@ -5,23 +5,8 @@
                 <img src="../assets/img/logo-light.png" alt="logo">
                 <nav>
                     <ul>
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Courses</a>
-                        </li>
-                        <li>
-                            <a href="#">Instructors</a>
-                        </li>
-                        <li>
-                            <a href="#">Events</a>
-                        </li>
-                        <li>
-                            <a href="#">Pages</a>
-                        </li>
-                        <li>
-                            <a href="#">Elements</a>
+                        <li v-for="(element,index) in nav" :key="index">
+                            <a href="#">{{element}}</a>
                         </li>
                     </ul>
                 </nav>
@@ -48,7 +33,10 @@
 
 <script>
 export default {
-    name:'Header'
+    name:'Header',
+    props: {
+        nav:Array
+    }
 }
 </script>
 
