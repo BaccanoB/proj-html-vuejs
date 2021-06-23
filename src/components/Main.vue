@@ -257,10 +257,10 @@
         <img src="../assets/img/h5-client-1.png" alt="university">
         <img src="../assets/img/h5-client-2.png" alt="educator">
         <img src="../assets/img/h5-client-1.png" alt="university">
-        <!-- <img v-for="(element,index) in images" :key="index" :src="hovered == false? element.img:element.imgHover"
-        @mouseover="hovered=true"
-        @mouseleave="hovered=false" 
-        alt="academy">-->
+        <!-- <div v-for="(element,index) in images" :key="index" >
+            <img :src="element.img"
+            alt="academy">
+        </div> -->
     </section>
     <!-- /logo section -->
 
@@ -280,28 +280,8 @@
 <script>
 export default {
     name:'Main',
-    hovered:false,
-    data(){
-        return{
-            images:[
-                {
-                    img:"./assets/img/h5-client-5.png",
-                    imgHover:"./assets/img/h5-client-5-h.png"
-                },
-                {
-                    img:"./assets/img/h5-client-1.png",
-                    imgHover:"./assets/img/h5-client-1-h.png"
-                },
-                {
-                    img:"./assets/img/h5-client-2.png",
-                    imgHover:"./assets/img/h5-client-2-h.png"
-                },
-                {
-                    img:"./assets/img/h5-client-1.png",
-                    imgHover:"./assets/img/h5-client-1-h.png"
-                }
-            ]
-        }
+    props:{
+        images: Array
     }
 }
 </script>

@@ -18,17 +18,9 @@
         <div>
             <h3>Popular Courses</h3>
             <ul>
-                <li>
-                    <h4>Business English</h4> 
-                    <p>Preston Marshall</p>
-                </li>
-                <li>
-                   <h4>Social Computing</h4> 
-                   <p>David Sanders</p>
-                </li>
-                <li>
-                    <h4>Learn Spanish</h4> 
-                    <p>Jennie King</p>
+                <li v-for="(element,index) in professors" :key="index">
+                    <h4>{{ element.name }}</h4> 
+                    <p>{{ element.subject }}</p>
                 </li>
             </ul>
         </div>
@@ -80,7 +72,10 @@
 
 <script>
 export default {
-    name:'Footer'
+    name:'Footer',
+    props:{
+        professors:Array
+    }
 }
 </script>
 
